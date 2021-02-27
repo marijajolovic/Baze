@@ -1,0 +1,14 @@
+declare
+drz_id WF_COUNTRIES.country_id%TYPE;
+pop WF_COUNTRIES.population%TYPE;
+ime WF_COUNTRIES.country_name%TYPE;
+
+begin
+drz_id:= :id_drzave;
+select population, country_name into pop,ime from WF_COUNTRIES where drz_id=country_id;
+if (pop>1000000000) then
+DBMS_OUTPUT.PUT_LINE(ime||' ima vise od 1.000.000.000 stanovnika.');
+else
+DBMS_OUTPUT.PUT_LINE(ime||' nema vise od 1.000.000.000 stanovnika.');
+end if;
+end
