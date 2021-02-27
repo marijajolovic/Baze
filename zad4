@@ -1,0 +1,16 @@
+declare
+drz_id WF_COUNTRIES.country_id%TYPE;
+ime WF_COUNTRIES.country_name%TYPE;
+i number;
+
+begin
+i:=51;
+while (i<=55)
+loop
+select country_id, country_name into drz_id, ime from WF_COUNTRIES where country_id=i;
+DBMS_OUTPUT.PUT_LINE(drz_id||' '||ime);
+i:=i+1;
+if(i>55) then exit;
+end if;
+end loop;
+end
