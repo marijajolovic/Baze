@@ -1,0 +1,10 @@
+declare
+godina number;
+begin
+godina:= :godina;
+if (mod(godina,4)=0) then
+DBMS_OUTPUT.PUT_LINE(godina||'. godina je prestupna');
+else
+DBMS_OUTPUT.PUT_LINE(godina||'. godina nije prestupna');
+end if;
+end
